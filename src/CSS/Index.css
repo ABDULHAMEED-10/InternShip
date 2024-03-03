@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary_bg_clr: #25262a;
+  --secondary_bg_clr: #2d2e32;
+  --tertary-bg-color: rgba(66, 67, 71, 255);
+  --primary_heading_clr: rgb(255, 255, 255);
+  --primary_text_clr: rgb(255, 255, 255);
+  --secondary_text_clr: #e8e8e8;
+  --paragraph-text-family: "poppins", sans-serif;
+  --heading-text-family: "montserrat", sans-serif;
+  --text-green: rgb(100, 244, 171);
+  --color-icon: rgb(255, 175, 41);
+}
+
+body {
+  background-color: var(--primary_bg_clr);
+  box-sizing: border-box;
+}
+.hero-section-main,
+.Navbar {
+  padding: 0 0.7rem 0 2rem;
+  background-color: var(--primary_bg_clr);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-text-family);
+  color: var(--primary_heading_clr);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+p {
+  color: var(--secondary_text_clr);
+  font-family: var(--paragraph-text-family);
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+.rpeated_button {
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 207, 84) 11.2%,
+    rgb(255, 158, 27) 91.1%
+  );
+  color: rgb(37, 38, 42);
+  padding: 2vh 3.1vw;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--paragraph-text-family);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.rpeated_button:hover {
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 158, 27) 11.2%,
+    rgb(255, 207, 84) 91.1%
+  );
+}

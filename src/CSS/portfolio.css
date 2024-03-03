@@ -1,0 +1,20 @@
+.intro-text{
+    color: var(--secondary_text_clr);
+    font-size: 1rem;
+}
+.link{
+    color: rgb(254, 205, 26);
+    font-family: var(--primary-text-family);
+    font-weight: 400;
+}
+.link-before{
+    color: rgb(254, 205, 26);
+    font-size: large;
+
+}
+.image, .image-bg{
+    border-radius: 8%;
+    width: 43vw;
+    height: 35vw;
+    background-color:var(--tertary-bg-color);
+}
