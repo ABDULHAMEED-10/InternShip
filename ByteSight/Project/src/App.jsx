@@ -12,11 +12,9 @@ import { Vendors } from "./Pages/Vendors/Vendors";
 
 import {
   createBrowserRouter,
-  createRoutesFromElements,
-  Route,
   RouterProvider,
 } from "react-router-dom";
-import React from "react";
+
 
 const router = createBrowserRouter([
   {
