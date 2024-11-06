@@ -57,7 +57,7 @@ export const drawerData = [
     {
         id: 10,
         title: 'Vendors',
-        icon: "fa-solid fa-boxes",
+        icon: "fa-solid fa-boxes ",
         link: '/vendors'
     }
 ];

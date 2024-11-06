@@ -1,9 +1,9 @@
 import { ProductData } from "./ProductData"
 export const ProductsMenu = () => {
   return (
-      <div className="bg-gray-100 m-4 p-6 rounded-xl">
+      <div className="bg-gray-100 rounded-xl w-full">
           {/*  */}
-          <div className="flex gap-10 p-2">
+          <div className="flex gap-8 px-6 py-4 text-sm">
           <div className="flex items-center gap-2">
               <i className="fa-solid fa-bars "></i><p>
               Columns
@@ -30,7 +30,7 @@ export const ProductsMenu = () => {
           {/*  */}
           
         
-          <div>
+          <div className="">
               <ProductData />
           </div>
     </div>

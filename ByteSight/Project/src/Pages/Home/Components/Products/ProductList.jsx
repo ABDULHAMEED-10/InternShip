@@ -4,8 +4,8 @@ export const ProductList = () => {
   return (
     <div>
       {/* Product list buttton */}
-      <div className="flex justify-around items-center mt-8">
-        <div className="bg-gray-100 w-48 h-10 rounded flex justify-center items-center cursor-pointer">
+      <div className="flex justify-around items-center mt-8 text-sm">
+        <div className="bg-gray-100 w-40 h-10 rounded flex justify-center items-center cursor-pointer">
           <span className="flex justify-center items-center gap-4">
             <select className="bg-gray-100 border-none outline-none">
               <option value="all">All Products</option>
@@ -35,7 +35,7 @@ export const ProductList = () => {
         </div>
       </div>
       {/* Product list table */}
-      <div>
+      <div className="flex p-10 ">
         <ProductsMenu />
       </div>
     </div>

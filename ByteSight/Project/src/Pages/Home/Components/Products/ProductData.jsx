@@ -1,49 +1,76 @@
-import  {productListData}  from "../../../../Data";
+import { productListData } from "../../../../Data";
+let rows = 1;
 export const ProductData = () => {
   return (
-    <div>
-          <table className="bg-gray-100 text-gray-800">
-              <thead className="bg-ListRed text-gray-200">
-                  <tr className="flex text-sm font-medium py-4">
-                      <th className="w-28">Product</th>
-                      <th className="w-28">Product ID</th>
-                      <th className="w-28">Make</th>
-                      <th className="w-28">Vendors</th>
-                      <th className="w-28">Unit</th>
-                      <th className="w-28">Unit-Cost</th>
-                      <th className="w-28">Selling Price</th>
-                      <th className="w-28">Reorder Point</th>
-                      <th className="w-28">Sub Category</th>
-                      <th className="w-28">Product Status</th>
-                      <th className="w-28">Actions</th>
-                  </tr>
-              </thead>
-              <tbody>
-                    
-       { productListData.map((product) => {
-              return (
-                <tr key={product.id} className="flex text-sm font-medium text-center mt-4">
-                  
-                      <td className="w-28">{product.Product}</td>
-                      <td className="w-28">{product.ProductID}</td>
-                      <td className="w-28">{product.Make}</td>
-                      <td className="w-28">{product.Vendors}</td>
-                      <td className="w-28">{product.Unit}</td>
-                      <td className="w-28">{product.UnitCost}</td>
-                      <td className="w-28">{product.SellingPrice}</td>
-                      <td className="w-28">{product.ReorderPoint}</td>
-                      <td className="w-28">{product.SubCategory}</td>
-                      <td className="w-28">{product.ProductStatus}</td>
-                      <td className="w-28">{product.Actions}</td>
-                    
-       </tr>
-                
-              );
-       })}
-       </tbody>
-              
-          </table>
-          
+    <div className="">
+    <table className="table-auto bg-gray-100 text-gray-800 w-full">
+      <thead>
+        <tr className="text-gray-200 h-14 text-sm bg-ListRed">
+          {/* <div className="flex items-center justify-end mr-2 h-14 ">
+            <div className="flex items-center gap-1">
+            <th>Product</th>
+            <i className="fa-solid fa-arrow-up opacity-90 text-xs font-extralight"></i>
+            </div>
+            <div className="ml-3">
+            <i className="fa-solid fa-ellipsis-vertical opacity-90 text-xs font-extralight"></i>
+            </div>
+          </div> */}
+          <th>Product</th>
+          <th>Product ID</th>
+          <th>Make</th>
+          <th>Vendors</th>
+          <th>Unit</th>
+          <th>Unit Cost</th>
+          <th>Selling Price</th>
+          <th>Reorder Point</th>
+          <th>Sub Category</th>
+          <th>Product Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {productListData.map((product) => {
+          return (
+            <tr key={product.id} className="text-sm text-center h-10">
+              <td>{product.Product}</td>
+              <td>{product.ProductID}</td>
+              <td>{product.Make}</td>
+              <td>{product.Vendors}</td>
+              <td>{product.Unit}</td>
+              <td>{product.UnitCost}</td>
+              <td>{product.SellingPrice}</td>
+              <td>{product.ReorderPoint}</td>
+              <td>{product.SubCategory}</td>
+              <td>{product.ProductStatus}</td>
+              <td>{product.Actions}</td>
+            </tr>
+          );
+        })}
+        
+      </tbody>
+      </table>
+      <div className="bg-ListRed text-gray-200 h-12 text-sm font-sans flex items-center w-full justify-around">
+          <div className="w-2/4">
+            <p className="text-gray-100">{rows} row selected</p>
+          </div>
+          <div className="flex items-center gap-10 ">
+            <div className="flex items-center gap-4 ">
+              <p className="text-gray-300">Rows per page:</p>
+              <select className="bg-ListRed text-gray-300 border-none outline-none">
+                <option value="all">30</option>
+                <option value="selected">50</option>
+                <option value="none">100</option>
+              </select>
+            </div>
+            <div className="flex gap-8 items-center">
+              <p className="text-gray-300">1 to 2 of 2</p>
+            <div className="flex items-center gap-2">
+            <i className="fa-solid fa-chevron-left text-xs"></i>
+            <i className="fa-solid fa-chevron-right text-xs"></i>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   );
 };
