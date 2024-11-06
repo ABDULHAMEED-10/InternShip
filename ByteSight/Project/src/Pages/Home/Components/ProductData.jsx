@@ -1,6 +1,33 @@
-import { productListData } from "../../../../Data";
-let rows = 1;
+import { productListData } from "../../../Utils/Data";
+import { useState,useEffect } from "react";
 export const ProductData = () => {
+  const [rows, setRows] = useState(productListData.length);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  useEffect(() => {
+    setRows(productListData.length);
+  }, [productListData]);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = productListData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(rows / itemsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const handleItemsPerPageChange = (event) => {
+    setItemsPerPage(Number(event.target.value));
+    setCurrentPage(1); 
+  };
   return (
     <div className="">
     <table className="table-auto bg-gray-100 text-gray-800 w-full">
@@ -28,9 +55,9 @@ export const ProductData = () => {
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
-        {productListData.map((product) => {
-          return (
+        <tbody>
+          
+        {currentItems.map((product) => (
             <tr key={product.id} className="text-sm text-center h-10">
               <td>{product.Product}</td>
               <td>{product.ProductID}</td>
@@ -44,8 +71,7 @@ export const ProductData = () => {
               <td>{product.ProductStatus}</td>
               <td>{product.Actions}</td>
             </tr>
-          );
-        })}
+          ))}
         
       </tbody>
       </table>
@@ -56,17 +82,20 @@ export const ProductData = () => {
           <div className="flex items-center gap-10 ">
             <div className="flex items-center gap-4 ">
               <p className="text-gray-300">Rows per page:</p>
-              <select className="bg-ListRed text-gray-300 border-none outline-none">
-                <option value="all">30</option>
-                <option value="selected">50</option>
-                <option value="none">100</option>
+            <select
+              onChange={handleItemsPerPageChange}
+              value={itemsPerPage}
+              className="bg-ListRed text-gray-300 border-none outline-none">
+                        <option value={10}>10</option>
+        <option value={15}>15</option>
+        <option value={20}>20</option>
               </select>
             </div>
             <div className="flex gap-8 items-center">
-              <p className="text-gray-300">1 to 2 of 2</p>
+              <p className="text-gray-300"> {currentPage} of {totalPages}</p>
             <div className="flex items-center gap-2">
-            <i className="fa-solid fa-chevron-left text-xs"></i>
-            <i className="fa-solid fa-chevron-right text-xs"></i>
+              <i className="fa-solid fa-chevron-left text-xs" onClick={handlePreviousPage} disabled={currentPage === 1}></i>
+            <i className="fa-solid fa-chevron-right text-xs" onClick={handleNextPage} disabled={currentPage === totalPages}></i>
               </div>
             </div>
           </div>
