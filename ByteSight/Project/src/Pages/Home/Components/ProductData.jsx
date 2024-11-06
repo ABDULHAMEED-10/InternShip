@@ -68,7 +68,13 @@ export const ProductData = () => {
               <td>{product.ReorderPoint}</td>
               <td>{product.SubCategory}</td>
               <td>{product.ProductStatus}</td>
-              <td>{product.Actions}</td>
+              <td>
+                <div className="flex items-center justify-center gap-2 text-gray-600 text-xs">
+                  <i className="fa-regular fa-eye border border-gray-300 rounded cursor-pointer p-1.5 "></i>
+                  <i className="fa-regular fa-pen-to-square border border-gray-300 rounded cursor-pointer p-1.5"></i>
+                  <i className="fa-solid fa-trash border border-gray-300 rounded cursor-pointer p-1.5"></i>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
