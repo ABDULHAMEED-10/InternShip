@@ -29,10 +29,11 @@ export const ProductData = () => {
     setCurrentPage(1);
   };
   return (
-    <div className="">
+    <div>
+    <div className="table-container" style={{ maxHeight: '400px', overflowY: 'auto' }}>
       <table className="table-auto bg-gray-100 text-gray-800 w-full">
-        <thead>
-          <tr className="text-gray-200 h-14 text-sm bg-ListRed">
+        <thead className="sticky top-0 bg-ListRed">
+          <tr className="text-gray-200 h-14 text-sm ">
             {/* <div className="flex items-center justify-end mr-2 h-14 ">
             <div className="flex items-center gap-1">
             <th>Product</th>
@@ -79,6 +80,8 @@ export const ProductData = () => {
           ))}
         </tbody>
       </table>
+    </div>
+
       <div className="bg-ListRed text-gray-200 h-12 text-sm font-sans flex items-center w-full justify-around">
         <div className="w-2/4">
           <p className="text-gray-100">{rows} row selected</p>
