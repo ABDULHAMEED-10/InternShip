@@ -10,10 +10,15 @@ export const Header = () => {
         <MdOutlineSearch />
           </div>
           <div className="text-base">
-            <h3>Search here</h3>
+            <input
+          type="text"
+          placeholder="Search here"
+          className="w-full bg-transparent outline-none text-base"
+        />
           </div>
         </div>
       </div>
+      
        
         <div className="flex items-center gap-3 bg-gray-100 p-3 w-1/5 rounded-xl justify-between">
         <div className="flex items-center">

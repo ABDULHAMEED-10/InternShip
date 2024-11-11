@@ -43,11 +43,15 @@ export const Graphs = () => {
       </div>
 
       <div className="flex w-2/5 bg-gray-100 p-8 rounded-xl justify-between ">
-        Invoice history
+              <div>
+              <h1 className='font-semibold text-lg'>Invoice History</h1>
+        </div>
       </div>
 
       <div className="flex w-1/4  bg-gray-100 p-8 rounded-xl justify-between">
-        Speed Test
+      <div>
+              <h1 className='font-semibold text-lg'>Speed Test</h1>
+        </div>
       </div>
     </div>
   );
