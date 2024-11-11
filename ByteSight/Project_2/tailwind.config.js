@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'serif': ['Inter', 'sans-serif'],
 
       },
       colors: {
@@ -16,6 +16,7 @@ export default {
         'custom-red': "#FF1F25",
         'custom-green': "#56BA28",
       },
+  
 
     },
   },
